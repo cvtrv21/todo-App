@@ -1,0 +1,3 @@
+<app-add-todo (newEvent)="addTask($event)"></app-add-todo>
+
+<app-todo-list [arr]="todoArray" (newEvent)="deleteTask($event)"></app-todo-list>
