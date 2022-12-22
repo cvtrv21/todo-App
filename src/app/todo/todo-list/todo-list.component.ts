@@ -1,33 +1,29 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Todo } from '../interfaces/todo.interface';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
 })
-
 export class TodoListComponent implements OnInit {
+  @Input() arrayTodo: Todo[] = [];
 
-  @Input() arr: string [] = [];
+  @Output() delete = new EventEmitter<Todo>();
 
-  @Output() newEvent = new EventEmitter<number>;
+  arr: Todo[] = [];
 
-  isTodo : boolean = true;
+  isTodo: boolean = true;
 
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  deleteTaskChild(value : number) {
-    this.newEvent.emit(value);
+  deleteTaskChild(arr: Todo) {
+    this.delete.emit(arr);
   }
 
   toggleState() {
     this.isTodo = !this.isTodo;
   }
-
-
-
 }

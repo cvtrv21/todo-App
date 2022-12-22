@@ -1,30 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Todo } from '../interfaces/todo.interface';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  styleUrls: ['./add-todo.component.css'],
 })
-
 export class AddTodoComponent implements OnInit {
+  @Output() newEvent = new EventEmitter<string>();
 
-  @Input() taskName : string = '';
-
-  @Output() newEvent = new EventEmitter<string>;
-
-  taskContent : string = '';
+  taskContent: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-
-  onInput(event: Event){
+  onInput(event: Event) {
     this.taskContent = (<HTMLInputElement>event.target).value;
   }
 
-  onClick(){
+  onClick() {
     this.newEvent.emit(this.taskContent);
   }
-
 }

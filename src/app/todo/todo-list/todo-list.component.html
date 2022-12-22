@@ -2,22 +2,23 @@
 
   <tbody>
 
-  <tr *ngFor="let task of arr; let i=index" class="border d-flex">
-      <td class="col-2" *ngIf="arr && arr.length" (click)="toggleState()">
+
+  <tr *ngFor="let task of arrayTodo; let i=index" class="border d-flex">
+      <td class="col-2" *ngIf="arrayTodo && arrayTodo.length" (click)="toggleState()">
           <i class="bi bi-circle" *ngIf="isTodo">{{i + 1}}</i>
           <i class="bi bi-check-circle" *ngIf="!isTodo">{{i + 1}}</i>
       </td>
 
-      <td class="col-8" *ngIf="arr && arr.length">
-        {{task}}
+      <td class="col-8" *ngIf="arrayTodo && arrayTodo.length">
+        {{task.label}}
       </td>
 
-      <td class="col-2" (click)="deleteTaskChild(i)" *ngIf="arr && arr.length">
+      <td class="col-2" (click)="deleteTaskChild(task)" *ngIf="arrayTodo && arrayTodo.length">
           <i class="bi bi-x"></i>
       </td>
   </tr>
 
-  <tr *ngIf="!arr || !arr.length">
+  <tr *ngIf="!arrayTodo || !arrayTodo.length">
     <td class="col">
       Non ci sono task
     </td>
