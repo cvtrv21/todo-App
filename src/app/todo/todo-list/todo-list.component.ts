@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Todo } from '../add-todo/models/todo';
 import { ITodo } from '../interfaces/todo.interface';
+
+
 
 @Component({
   selector: 'app-todo-list',
@@ -7,11 +10,11 @@ import { ITodo } from '../interfaces/todo.interface';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent implements OnInit {
-  @Input() arrayTodo: ITodo[] = [];
+  @Input() arrayTodo: Todo[] = [];
 
-  @Output() delete = new EventEmitter<ITodo>();
+  @Output() delete = new EventEmitter<Todo>();
 
-  arr: ITodo[] = [];
+  arr: Todo[] = [];
 
   isTodo: boolean = true;
 
@@ -19,7 +22,7 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  deleteTaskChild(arr: ITodo) {
+  deleteTaskChild(arr: Todo) {
     this.delete.emit(arr);
   }
 

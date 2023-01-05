@@ -8,6 +8,7 @@ import { TodoComponent } from './todo/todo.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddTodoComponent } from './todo/add-todo/add-todo.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
