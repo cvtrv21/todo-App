@@ -1,26 +1,30 @@
 import { Injectable } from '@angular/core';
-import { takeLast } from 'rxjs';
-import { Todo } from '../interfaces/todo.interface';
+import { Observable, takeLast } from 'rxjs';
+import { ITodo } from '../interfaces/todo.interface';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  constructor() {}
+  constructor() {
+    console.log('TASK SERVICE CREATED');
+  }
 
-  private todos: Todo[] = [];
+  private todos: ITodo[] = [];
 
   private count = 0;
 
-  public getAll(): Todo[] {
+  public getAll(): ITodo[] {
     return this.todos;
   }
 
-  public getOne(id: number): Todo | null {
+  public getOne(id: number): ITodo | null {
     return this.todos[id];
   }
 
-  public createOne(task: string): Todo {
+  public createOne(task: string): ITodo {
     this.todos.push({
       id: this.count,
       label: task,

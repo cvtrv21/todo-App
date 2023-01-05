@@ -13,8 +13,8 @@
         {{task.label}}
       </td>
 
-      <td class="col-2" (click)="deleteTaskChild(task)" *ngIf="arrayTodo && arrayTodo.length">
-          <i class="bi bi-x"></i>
+      <td class="col-2"  *ngIf="arrayTodo && arrayTodo.length">
+          <button (click)="deleteTaskChild(task)">Elimina</button>
       </td>
   </tr>
 

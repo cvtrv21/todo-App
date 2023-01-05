@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Todo } from './interfaces/todo.interface';
+import { ITodo } from './interfaces/todo.interface';
 import { TodoService } from './services/todo.service';
 
 @Component({
@@ -8,14 +8,14 @@ import { TodoService } from './services/todo.service';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent implements OnInit {
-  todoArray: Todo[] = [];
+  todoArray: ITodo[] = [];
 
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
   }
 
-  deleteTask(todo: Todo) {
+  deleteTask(todo: ITodo) {
     this.todoService.deleteOne(todo.id);
     this.todoArray = this.todoService.getAll();
   }
