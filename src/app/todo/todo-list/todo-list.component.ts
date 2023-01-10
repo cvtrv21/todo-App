@@ -14,9 +14,9 @@ export class TodoListComponent implements OnInit {
 
   @Output() delete = new EventEmitter<Todo>();
 
-  arr: Todo[] = [];
+  public arr: Todo[] = [];
 
-  isTodo: boolean = true;
+  public isTodo: boolean = true;
 
   constructor() {}
 

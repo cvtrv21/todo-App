@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddTodoComponent } from './todo/add-todo/add-todo.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskComponent } from './todo/task/task.component';
+import { PageNotFoundComponent } from './todo/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     TodoComponent,
     AddTodoComponent,
-    TodoListComponent
+    TodoListComponent,
+    TaskComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

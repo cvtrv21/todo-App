@@ -65,7 +65,7 @@ export class TodoService {
 
   public _getOne(id: number): Observable<Todo> {
     return this._http
-      .get<ITodo>('http://localhost:3000/todo/' + id)
+      .get<ITodo>(`http://localhost:3000/todo/${id}`)
       .pipe(map((tasks) => new Todo(tasks.id, tasks.label)));
   }
 
@@ -82,6 +82,6 @@ export class TodoService {
   }
 
   public _deleteOne(id: number): Observable<Todo> {
-    return this._http.delete<ITodo>('http://localhost:3000/todo/' + id);
+    return this._http.delete<ITodo>(`http://localhost:3000/todo/${id}`);
   }
 }

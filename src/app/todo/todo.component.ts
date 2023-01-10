@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
 export class TodoComponent implements OnInit, OnDestroy {
   private _taskSubscription!: Subscription;
 
-  todoArray: Todo[] = [];
+  public todoArray: Todo[] = [];
 
   constructor(private _todoService: TodoService) {
     console.log('Nuova istanza creta per TaskList');

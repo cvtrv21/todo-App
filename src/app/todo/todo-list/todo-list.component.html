@@ -9,7 +9,7 @@
           <i class="bi bi-check-circle" *ngIf="!isTodo">{{i + 1}}</i>
       </td>
 
-      <td class="col-8" *ngIf="arrayTodo && arrayTodo.length">
+      <td class="col-8" *ngIf="arrayTodo && arrayTodo.length" [routerLink]="['/todo', task.id]">
         {{task.label}}
       </td>
 

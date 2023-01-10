@@ -1,3 +1,6 @@
+<app-header routerLink="/home"></app-header>
 <app-add-todo (newEvent)="addTask($event)"></app-add-todo>
 
 <app-todo-list [arrayTodo]="todoArray" (delete)="deleteTask($event)"></app-todo-list>
+
+<router-outlet></router-outlet>

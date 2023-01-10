@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class AddTodoComponent implements OnInit {
   @Output() newEvent = new EventEmitter<string>();
 
-  taskContent: string = '';
+  public taskContent: string = '';
 
   constructor() {}
 

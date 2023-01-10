@@ -1,0 +1,24 @@
+<app-header routerLink="/home"></app-header>
+<table
+  class="table table-sm borderless table-success table-striped table-hover"
+>
+  <tbody>
+    <tr class="border d-flex">
+      <td class="col-2">
+        {{ task.id }}
+      </td>
+
+      <td class="col-8">
+        {{ task.label }}
+      </td>
+
+      <td class="col-2">
+        <button>Elimina</button>
+      </td>
+    </tr>
+
+    <tr *ngIf="!task">
+      <td class="col">Non ci sono task</td>
+    </tr>
+  </tbody>
+</table>
