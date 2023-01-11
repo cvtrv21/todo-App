@@ -1,0 +1,54 @@
+<form class="center" (ngSubmit)="handleLogin(f)" #f="ngForm">
+  <h2>Register</h2>
+  <div>
+    <p>Name:</p>
+    <input name="name" type="name" [(ngModel)]="name" #errName="ngModel" required minlength="3" maxlength="30"/>
+    <div *ngIf="errName.touched && errName.invalid">
+      <p *ngIf="errName.hasError('required')">Campo obbligatorio</p>
+      <p *ngIf="errName.hasError('minlength')">Lunghezza minima: 3 caratteri</p>
+      <p *ngIf="errName.hasError('maxlength')">Lunghezza massima: 30 caratteri</p>
+    </div>
+  </div>
+
+  <div>
+    <p>Surname:</p>
+    <input name="surname" type="surname" [(ngModel)]="surname" #errSurname="ngModel" required minlength="3" maxlength="30"/>
+    <div *ngIf="errSurname.touched && errSurname.invalid">
+      <p *ngIf="errSurname.hasError('required')">Campo obbligatorio</p>
+      <p *ngIf="errSurname.hasError('minlength')">Lunghezza minima: 3 caratteri</p>
+      <p *ngIf="errSurname.hasError('maxlength')">Lunghezza massima: 30 caratteri</p>
+    </div>
+  </div>
+
+  <div>
+    <p>Email:</p>
+    <input name="email" type="email" [(ngModel)]="email" #errEmail="ngModel" required email/>
+    <div *ngIf="errEmail.touched && errEmail.invalid">
+      <p *ngIf="errEmail.hasError('required')">Campo obbligatorio</p>
+      <p *ngIf="errEmail.hasError('email')">Email non valida</p>
+    </div>
+  </div>
+
+  <div>
+    <p>Password:</p>
+    <input name="password" type="password" [(ngModel)]="password" #errPass="ngModel" required minlength="3" maxlength="30"/>
+    <div *ngIf="errPass.touched && errPass.invalid">
+      <p *ngIf="errPass.hasError('required')">Campo obbligatorio</p>
+      <p *ngIf="errPass.hasError('minlength')">Lunghezza minima: 3 caratteri</p>
+      <p *ngIf="errPass.hasError('maxlength')">Lunghezza massima: 60 caratteri</p>
+    </div>
+  </div>
+
+  <div>
+    <p>Repeat Password:</p>
+    <input name="password" type="password" #errRep="ngModel" [(ngModel)]="repeatPassword" required minlength="3" maxlength="30"/>
+    <div *ngIf="errRep.touched && errRep.invalid">
+      <p *ngIf="errRep.hasError('required')">campo obbligatorio</p>
+      <p *ngIf="errRep.hasError('minlength')">Lunghezza minima: 3 caratteri</p>
+      <p *ngIf="errRep.hasError('maxlength')">Lunghezza massima: 60 caratteri</p>
+      <p *ngIf="password !== repeatPassword">Le password non coincidono</p>
+    </div>
+  </div>
+
+  <button class="right">Confirm</button>
+</form>

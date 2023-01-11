@@ -11,6 +11,8 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskComponent } from './todo/task/task.component';
 import { PageNotFoundComponent } from './todo/page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { PageNotFoundComponent } from './todo/page-not-found/page-not-found.comp
     AddTodoComponent,
     TodoListComponent,
     TaskComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
