@@ -18,6 +18,7 @@ export class TodoListComponent implements OnInit {
 
   public isTodo: boolean = true;
 
+
   constructor() {}
 
   ngOnInit(): void {}

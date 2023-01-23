@@ -1,9 +1,9 @@
-<table class="table table-sm borderless table-success table-striped table-hover">
+<table class="table table-sm borderless table-striped tab">
 
   <tbody>
 
 
-  <tr *ngFor="let task of arrayTodo; let i=index" class="border d-flex">
+  <tr *ngFor="let task of arrayTodo; let i=index" class="border d-flex  myline">
       <td class="col-2" *ngIf="arrayTodo && arrayTodo.length" (click)="toggleState()">
           <i class="bi bi-circle" *ngIf="isTodo">{{i + 1}}</i>
           <i class="bi bi-check-circle" *ngIf="!isTodo">{{i + 1}}</i>
@@ -14,7 +14,7 @@
       </td>
 
       <td class="col-2"  *ngIf="arrayTodo && arrayTodo.length">
-          <button (click)="deleteTaskChild(task)">Elimina</button>
+          <button class="mybtn" (click)="deleteTaskChild(task)">Elimina</button>
       </td>
   </tr>
 

@@ -13,7 +13,6 @@ export class RegisterComponent {
   public password: string = '';
   public repeatPassword: string = '';
 
-  public submitted = false;
 
   handleLogin(f: NgForm) {
     if (f.invalid) {
@@ -29,7 +28,21 @@ export class RegisterComponent {
     }
   }
 
-  onSubmit() {
-    this.submitted = true;
+  check() : boolean{
+
+    if(document.getElementById('password') === document.getElementById('repeatPassword')){
+      return true
+    }
+    else return false;
+
+    /*
+    this.password = pwd;
+    this.repeatPassword = rep_pwd;
+    if(this.password === this.repeatPassword){
+      return true;
+    }
+    return false;
+    */
+
   }
 }
